@@ -1,64 +1,38 @@
-# Letter recon
+# Letter recon findings
 
-Purpose: find out what OPDP letters actually contain before designing a
-schema. Fill one block per letter. Do not summarise or interpret, record
-what is literally there. If a field is absent, write "absent" rather than
-leaving it blank, since absence is the finding.
+Read in full: VYEPTI 6/24/2026, OZEMPIC 2/26/2026, SKYRIZI 9/9/2025
 
-Target: 10 to 15 letters.
+## The decisive answer
+FDA quotes approved label text in 1 of 3. The other two cite no PI at all.
+Dominant evidence type is FDA's critique of the study the company cited,
+not a label passage.
 
-Sample plan
-- 5 letters from 2024 to 2026
-- 3 letters from roughly 2015 to 2018
-- 2 letters from the pre-2017 archive
-- 1 warning letter (not untitled) to see if the format differs
+## Consistent letter structure
+1. RE block: application number, product, MA number
+2. Promotional piece identified by title and internal code
+3. Claims quoted verbatim in bullets, emphasis noted
+4. "These claims create a misleading impression that X, when this is not
+   the case"
+5. Reasoning about the cited evidence
+6. "We acknowledge [disclaimer]. However, [why it fails]"
+7. Conclusion and Requested Action, boilerplate
 
----
+## Observed violation bases
+- indication_overreach (Ozempic: implies all patients qualify for all uses)
+- unsupported_superiority (Ozempic vs other GLP-1s, Skyrizi vs Stelara)
+- study_design_inadequate (Skyrizi open-label, differential dropout)
+- exploratory_endpoint (Vyepti post-hoc, no alpha allocation)
+- instrument_validity (Vyepti HIT-6 content validity, MIDAS recall bias)
+- risk_presentation (Ozempic: no signal that risk info follows)
 
-## [YYYY-MM-DD] [company] [product]
+## Claim counts
+Ozempic 9 quoted lines, 3 violation groups
+Skyrizi 8 quoted claims, 1 violation group
+Vyepti 14 quoted claims, 3 violation groups
+Structure is letter -> violation groups -> claims. One to many both ways.
 
-URL:
-Letter type: warning / untitled
-Promotional piece type: DTC TV ad / banner / sales aid / brochure / website / social / other
-
-Claims flagged (count):
-
-Claim 1
-  Text as it appears in the letter:
-  Quoted verbatim or paraphrased by FDA:
-  Violation type in FDA's own words:
-  Label section FDA cites against it:
-  Specific label text quoted by FDA: yes / no
-
-Claim 2
-  (repeat as needed)
-
-Product identifiable for openFDA lookup: yes / no / partial
-  Brand name given:
-  Generic name given:
-  Application number or NDC given:
-
-Notes:
-  Anything odd. Tables, images referenced but not shown, redactions,
-  multiple products in one letter, claims that are visual rather than
-  textual.
-
----
-
-# Rollup
-
-Fill this in only after reading all of them.
-
-1. What fraction quote the claim verbatim rather than paraphrasing?
-2. What fraction cite a specific label section?
-3. What fraction quote the actual label text FDA is comparing against?
-4. Median claims per letter, and the range?
-5. What violation types recurred, and roughly how often?
-6. What fraction were identifiable to an openFDA record without guessing?
-7. Where did the format break across eras?
-8. What surprised me?
-
-# Verdict
-
-Is a claim-level dataset viable from this source? If yes, what does one
-row look like? If no, what is the blocker?
+## Corrections to earlier assumptions
+- Application number always present in RE line, index omission is irrelevant
+- Do not exclude visual claims. Visual elements are cited as part of the
+  reasoning (shirt colours, graph prominence, font size)
+- Ozempic is video: claims are tagged VO or SUPER with timestamps
