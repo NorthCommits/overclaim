@@ -36,3 +36,31 @@ Structure is letter -> violation groups -> claims. One to many both ways.
 - Do not exclude visual claims. Visual elements are cited as part of the
   reasoning (shirt colours, graph prominence, font size)
 - Ozempic is video: claims are tagged VO or SUPER with timestamps
+
+## Corpus survey (all 115 letters)
+
+Regex-reliable:
+  requested_action boilerplate  98%
+  application number            96%
+  RE block                      92%
+
+Content markers:
+  "misleading impression"       67%
+  + "misleadingly"              90% combined
+  PI section named              45%
+
+Out of scope: 5 letters (110684, 114446, 117097, 120674, 132641).
+Unapproved-product distribution under 502(f)(1), no promotional claims
+to extract. 117097 hits one marker only, needs manual confirmation.
+
+Working corpus: 110 letters.
+Quoted spans across corpus: 1,038. Median 7 per letter, max 66.
+
+## Corrections to my own recon
+The three letters I read closely were not representative. Violation types
+I generalised from them are rare corpus-wide:
+  superiority   2 / 115
+  post hoc      6 / 115
+  open label   11 / 115
+Do not fix the basis_type enum in advance. Extract FDA reasoning as free
+text, cluster it, then derive categories from what is actually there.

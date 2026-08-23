@@ -27,9 +27,9 @@ visual_element_cited bool    FDA cites imagery, layout, or prominence
 
 ## FDA reasoning
 misleading_impression string  FDA's own "creates the impression that X"
-basis_type          enum     indication_overreach | unsupported_superiority |
-                             study_design_inadequate | exploratory_endpoint |
-                             instrument_validity | risk_presentation
+basis_type          string   nullable in v2. Free text extraction first.
+                             Enum to be derived from clustering, not
+                             assumed. See recon notes.
 basis_detail        string   condensed reasoning
 cited_evidence      string   nullable, study the company relied on
 evidence_limitation string   nullable, why it fails
